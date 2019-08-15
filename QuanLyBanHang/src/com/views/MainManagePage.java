@@ -193,7 +193,8 @@ public class MainManagePage extends javax.swing.JFrame implements ActionListener
     }
     
     public void btnQuanLyHH() {
-        
+        new HOMEPAGE().setVisible(true);
+        this.dispose();
     }
     
     public void btnQuanLyKH(){
