@@ -237,7 +237,8 @@ public class CustomerManageInformation extends javax.swing.JFrame implements  Ac
     }
     
     public void back(){
-        System.exit(0);
+        new MainPage().setVisible(true);
+        this.dispose();
     }
     
     public void displayDatabase(){
