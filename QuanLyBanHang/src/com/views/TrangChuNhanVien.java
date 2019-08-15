@@ -199,7 +199,7 @@ public class TrangChuNhanVien extends javax.swing.JFrame implements ActionListen
     }
     
     public void btnBackClick(){
-        new MainPage().setVisible(true);
+        new MainManagePage().setVisible(true);
         this.setVisible(false);
     }
 }

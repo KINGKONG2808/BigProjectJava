@@ -16,7 +16,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-//import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
 
 /**
  *
@@ -60,6 +59,7 @@ public class NhanVienDao {
     
     
     public boolean themNhanVien(NhanVien nhanvien){
+        int result = 0;
         String query = "insert into NhanVien values (?,?,?,?,?,?,?)";
         try {
             PreparedStatement pstm = connect.prepareStatement(query);
@@ -71,13 +71,13 @@ public class NhanVienDao {
             pstm.setTimestamp(6, new Timestamp(nhanvien.getNgaySinh().getTime()));
             pstm.setInt(7, nhanvien.getLuong());
             
-            pstm.executeUpdate();
-            return true;
+            result = pstm.executeUpdate();
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
         
-        return false;
+        return result > 0;
     }
     
     public boolean updateThongTinNhanVien(NhanVien nhanvien){

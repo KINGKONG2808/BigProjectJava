@@ -237,7 +237,7 @@ public class CustomerManageInformation extends javax.swing.JFrame implements  Ac
     }
     
     public void back(){
-        new MainPage().setVisible(true);
+        new MainManagePage().setVisible(true);
         this.dispose();
     }
     
