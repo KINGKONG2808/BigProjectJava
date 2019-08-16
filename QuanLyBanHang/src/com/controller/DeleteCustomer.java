@@ -6,13 +6,13 @@ import java.sql.ResultSet;
 
 public class DeleteCustomer {
     public static boolean deleteCustomer(int maKhachHang){
+        int result = 0;
         String sqlDelete = "DELETE FROM KhachHang WHERE maKhachHang = ? ";
         try {
             PreparedStatement ps = ConnectDatabase.getConnection().prepareStatement(sqlDelete);
             ps.setInt(1, maKhachHang);
-            ps.executeUpdate();
-            return true;
+            result = ps.executeUpdate();
         } catch (Exception e) {e.printStackTrace();}
-        return false;
+        return result>0;
     }
 }

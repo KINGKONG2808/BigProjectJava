@@ -215,14 +215,12 @@ public class DeleteCustomerInformation extends javax.swing.JFrame implements Act
     public void btnDelete(){
         try {
             if(txtMaKH.getText().equals("")) JOptionPane.showMessageDialog(rootPane, "Yêu cầu nhập vào mã khách hàng cần xóa!");
-            else{
-                customer = new Customer();
-                customer.setMaKhachHang(Integer.parseInt(txtMaKH.getText()));
-                if(DeleteCustomer.deleteCustomer(customer.getMaKhachHang())){
-                    JOptionPane.showMessageDialog(rootPane, "Delete completed !!!");
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, "ID not found ...");                                    
-                }
+            customer = new Customer();
+            customer.setMaKhachHang(Integer.parseInt(txtMaKH.getText()));
+            if(DeleteCustomer.deleteCustomer(customer.getMaKhachHang())){
+                JOptionPane.showMessageDialog(rootPane, "Delete completed !!!");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "ID not found ...");                                    
             }
         } catch (Exception e) {e.printStackTrace();}
     }
